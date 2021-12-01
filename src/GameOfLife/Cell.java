@@ -42,5 +42,4 @@ public class Cell {
     public void addNeighbor(Cell c){
         neighbours.add(c);
     }
-
 }

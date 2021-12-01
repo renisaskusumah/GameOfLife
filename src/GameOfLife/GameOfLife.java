@@ -16,15 +16,20 @@ public class GameOfLife {
         cells = new Cell[width][height];
         for(int x = 0 ; x < width ; x++){
             for(int y = 0 ; y < height ; y++) {
-                cells[x][y] = new Cell(false);
+                boolean alive = false;
+                for(int[] p : pattern){
+                    if(x == p[0] && y == p[1]) {
+                        alive = true;
+                        break;
+                    }
+                }
+                cells[x][y] = new Cell(alive);
             }
         }
-        for(int[] p : pattern){
-            cells[p[0]][p[1]] = new Cell(true);
-        }
+
         for(int i = 0 ; i < width ; i++){
             for(int j = 0 ; j < height ; j++) {
-                //set neighbors
+                //set neighbors 3 x 3 grid
                 int n = 1;
                 for(int x = i - 1; x <= i + 1 ; x++) {
                     for (int y = j - 1; y <= j + 1; y++) {
