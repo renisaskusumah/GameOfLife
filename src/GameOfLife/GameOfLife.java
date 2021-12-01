@@ -9,7 +9,7 @@ public class GameOfLife {
     private Cell[][] cells;
     private boolean isRunning = false;
     //size of the cell to be drawn by graphic as rectangle inside the frame
-    private static int CELL_WIDTH  = 10;
+    private static int CELL_WIDTH  = 5;
 
     //Initialize a pattern as cells on the grid and set neighbours
     public GameOfLife(int[][] pattern) {
@@ -63,7 +63,7 @@ public class GameOfLife {
             for(int j = 0 ; j < height ; j++) {
                 if (cells[i][j].isAlive()) {
                    g.setColor(Color.BLACK);
-                   g.fillRect(i * 10, j * 10, 5, 5);
+                   g.fillRect(i * CELL_WIDTH, j * CELL_WIDTH, CELL_WIDTH, CELL_WIDTH);
                 }
             }
         }
