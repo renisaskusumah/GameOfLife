@@ -34,7 +34,7 @@ public class GameOfLife {
                             break;
                         }
                     }
-                    if(index == -1 && nX >= 0  && nY >= 0 && nX <= width && nY <= width){
+                    if(index == -1 && nX >= 0  && nY >= 0 && nX <= width && nY <= height){
                         Cell neighbor = new Cell(new int[]{nX, nY} , false);
                         cell.addNeighbor(neighbor);
                         cells.add(neighbor);
