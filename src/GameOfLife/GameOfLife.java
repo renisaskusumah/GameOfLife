@@ -14,10 +14,10 @@ public class GameOfLife {
     private static int CELL_WIDTH  = 10;
 
     //Initialize a pattern as cells on the grid and set neighbours
-    public GameOfLife(int[][] p) {
+    public GameOfLife(int[][] pattern) {
         cells = new ArrayList<Cell>();
-        for(int i = 0 ; i < p.length ; i++){
-            Cell cell = new Cell(new int[]{p[i][0] * CELL_WIDTH,p[i][1]* CELL_WIDTH}, true);
+        for(int i = 0 ; i < pattern.length ; i++){
+            Cell cell = new Cell(new int[]{pattern[i][0] * CELL_WIDTH,pattern[i][1]* CELL_WIDTH}, true);
             cells.add(cell);
         }
         updateGeneration();
