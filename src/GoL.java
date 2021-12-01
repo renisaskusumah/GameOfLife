@@ -42,7 +42,7 @@ public class GoL {
     }
 
     public GoL() throws InterruptedException {
-        game = new GameOfLife(glider);
+        game = new GameOfLife(gliderGun);
 
         // setup the UI
         canvas=new MyCanvas();
