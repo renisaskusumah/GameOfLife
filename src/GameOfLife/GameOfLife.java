@@ -25,18 +25,20 @@ public class GameOfLife {
             }
         }
 
+        //loop for grid (width x height)
         for(int i = 0 ; i < width ; i++){
             for(int j = 0 ; j < height ; j++) {
-                //set neighbors 3 x 3 grid
-                int n = 1;
-                for(int x = i - 1; x <= i + 1 ; x++) {
-                    for (int y = j - 1; y <= j + 1; y++) {
-                        if (n != 5 && x >= 0 && y >= 0 && x < width && y < height) {
-                            cells[i][j].addNeighbor(cells[x][y]);
-                        }
-                        n++;
-                    }
-                }
+                //set 8 neighbors
+                if(i > 0 && j >0) cells[i][j].addNeighbor(cells[i - 1][j - 1]);
+                if(j > 0) cells[i][j].addNeighbor(cells[i][j - 1]);
+                if(i < width - 1 && j > 0) cells[i][j].addNeighbor(cells[i + 1][j - 1]);
+
+                if(i > 0) cells[i][j].addNeighbor(cells[i - 1][j]);
+                if(i < width - 1) cells[i][j].addNeighbor(cells[i + 1][j]);
+
+                if(i > 0 && j < height - 1) cells[i][j].addNeighbor(cells[i - 1][j + 1]);
+                if(j < height - 1) cells[i][j].addNeighbor(cells[i][j + 1]);
+                if(i < width - 1 && j < height - 1) cells[i][j].addNeighbor(cells[i + 1][j + 1]);
             }
         }
     }
